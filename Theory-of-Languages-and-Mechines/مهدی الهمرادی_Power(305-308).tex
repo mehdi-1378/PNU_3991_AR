@@ -1,0 +1,216 @@
+\documentclass[9pt]{beamer}
+\usetheme{Frankfurt}
+\usepackage{multicol}
+\usepackage{graphicx}
+\linespread{1.35}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+
+
+\begin{document}
+\begin{frame}
+
+\section*{Ambiguity in Context-free Grammar }
+\begin{flushright}
+ \texttt{Context-free Grammar} \hspace*{0.10cm}\textbf{$|$} \textbf{305}\hspace*{0.5cm}
+\end{flushright}
+
+\vspace*{1cm}
+\fcolorbox{white}{black}{\textbf{\textcolor[rgb]{1.00,1.00,1.00}{Example 6.13}}}\hspace*{0.1cm} \texttt{Check whether the grammar is ambiguous or not.}\\
+
+\vspace*{0.3cm}
+\hspace*{4cm} $S \rightarrow aS/AS/A$ \\
+\hspace*{4cm} $A \rightarrow AS/a$ \\
+
+\vspace*{0.5cm}
+\textbf{Solution:} Consider the string 'aaa'. The string can be generated in many ways. Here, we are giving two
+ways.\\
+\vspace*{0.2cm}
+\hspace*{0.5cm} $i) S \rightarrow aS \rightarrow aAS \rightarrow aaS \rightarrow aaA \rightarrow aaa$ \\
+\hspace*{0.5cm} $ii) S \rightarrow A \rightarrow AS \rightarrow ASS \rightarrow aAS \rightarrow aaS \rightarrow aaA \rightarrow aaa$ \\
+\end{frame}
+
+\begin{frame}
+The parse trees for derivation (i) and (ii) are shown in Figs. 6.6 (i) and (ii).\\
+
+\begin{center}
+\section{picture}
+\includegraphics[width=8cm,height=5cm]{305.png}
+\end{center}
+
+\hspace*{0.5cm} Here, for the same string derived from the same grammar we are getting more than one parse tree.
+So, according to the definition, the grammar is an ambiguous grammar.\\
+
+\vspace*{0.5cm}
+\end{frame}
+
+\begin{frame}
+\fcolorbox{white}{black}{\textbf{\textcolor[rgb]{1.00,1.00,1.00}{Example 6.14}}}\hspace*{0.1cm} \texttt{Prove that the following grammar is ambiguous.}
+
+\hspace*{4cm} $V_N: \{S\}$ \\
+\hspace*{4cm} $\Sigma: \{id, +, *\}$ \\
+\hspace*{4cm} $P: S \rightarrow S + S/S * S/id$ \\
+\hspace*{4cm} $S: \{S\}$ \\
+
+\textbf{Solution:} Let us take a string $id + id*id$.\\
+The string can be generated in the following ways.\\
+
+\vspace*{0.2cm}
+\begin{flushleft}
+\section{picture}
+\includegraphics[width=8cm,height=0.8cm]{305-2.png}
+\end{flushleft}
+
+\vspace*{0.2cm}
+\hspace*{0.5cm} The parse trees for derivation (i) and (ii) are shown in Figs. 6.7 and 6.8.\\
+\end{frame}
+
+
+\begin{frame}
+\section*{Transitional Format}
+\begin{flushleft}
+    \textbf{306}\hspace*{0.1cm} \textbf{$|$} \hspace*{0.1cm} \texttt{Introduction to Automata Theory, Formal Languages and Computation}
+  \end{flushleft}
+
+\vspace*{0.5cm}
+\begin{center}
+\section{picture}
+\includegraphics[width=11cm,height=5cm]{306.png}
+\end{center}
+
+\vspace*{0.3cm}
+\end{frame}
+
+\begin{frame}
+\hspace*{0.5cm} As we are getting two parse trees for generating a string from the given grammar, the grammar is
+ambiguous.\\
+
+\fcolorbox{white}{black}{\textbf{\textcolor[rgb]{1.00,1.00,1.00}{Example 6.15}}}\hspace*{0.1cm} \texttt{Prove that the following grammar is ambiguous.}\\
+
+\vspace*{0.1cm}
+\hspace*{4cm} $S \rightarrow a/abSb/aAb$ \\
+\hspace*{4cm} $A \rightarrow bS/aAAb$ \\
+
+\vspace*{0.2cm}
+\textbf{Solution:} Take a string abababb. The string can be generated in the following ways.\\
+
+\begin{flushleft}
+  \section{picture}
+\includegraphics[width=8cm,height=0.8cm]{306-2.png}
+\end{flushleft}
+
+\end{frame}
+
+\begin{frame}
+\hspace*{0.5cm} The parse trees for (i) and (ii) are given in Fig. 6.9.\\
+
+\begin{center}
+\section{picture}
+\includegraphics[width=8cm,height=5cm]{306-3.png}
+\end{center}
+
+\hspace*{0.5cm} As we are getting two parse trees for generating a string from the given grammar, the grammar is
+ambiguous.\\
+\end{frame}
+
+\begin{frame}
+\section*{Ambiguity in Context-free Grammar }
+\begin{flushright}
+ \texttt{Context-free Grammar} \hspace*{0.10cm}\textbf{$|$} \textbf{307}\hspace*{0.5cm}
+\end{flushright}
+
+\vspace*{0.5cm}
+\fcolorbox{white}{black}{\textbf{\textcolor[rgb]{1.00,1.00,1.00}{Example 6.16}}}\hspace*{0.1cm} \texttt{Prove that the following grammar is ambiguous.}\\
+
+\hspace*{4cm} $S \rightarrow 0Y/01$ \\
+\hspace*{4cm} $X \rightarrow 0XY/0$ \\
+\hspace*{4cm} $Y \rightarrow XY1/1$ \\
+
+\vspace*{0.5cm}
+\textbf{Solution: }Take a string 000111. The string can be derived in the following ways.\\
+
+\vspace*{0.3cm}
+\begin{flushleft}
+  \section{picture}
+\includegraphics[width=8cm,height=0.8cm]{307-1.png}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}
+The parse trees for (i) and (ii) are shown is Fig. 6.10.\\
+
+\begin{center}
+\section{picture}
+\includegraphics[width=8cm,height=5cm]{307-2.png}
+\end{center}
+
+\hspace*{0.5cm} As we are getting two parse trees for generating a string from the given grammar, the grammar is
+ambiguous.\\
+\hspace*{0.5cm} In relation to the ambiguity in CFG, there are few more defi nitions. These are related to a CFL.
+These are:\\
+
+\vspace*{0.3cm}
+\end{frame}
+
+\begin{frame}
+\begin{enumerate}
+  \item \textbf{Ambiguous CFL:} A CFG G is said to be ambiguous if there exists some w $\in$ L(G) that has at
+least two distinct parse trees.\\
+  \item \textbf{Inherently Ambiguous CFL:} A CFL L is said to be inherently ambiguous if all its grammars are
+ambiguous.\\
+  \item \textbf{Unambiguous CFL:} If L is a CFL for which there exists an unambiguous grammar, then L is said
+to be unambiguous.\\
+\end{enumerate}
+
+\vspace*{0.3cm}
+(Even if one grammar for L is unambiguous, then L is an unambiguous language.)\\
+Ambiguous grammar creates problem. Let us take an example.\\
+For a grammar G, the production rule is\\
+
+\hspace*{4cm} $E \rightarrow E + E/E*E/a.$ \\
+
+From here, we have to construct $a + a*a$.\\
+\end{frame}
+
+\begin{frame}
+\section*{Transitional Format}
+\begin{flushleft}
+    \textbf{308}\hspace*{0.1cm} \textbf{$|$} \hspace*{0.1cm} \texttt{Introduction to Automata Theory, Formal Languages and Computation}
+  \end{flushleft}
+
+  \vspace*{0.5cm}
+The string can be generated in two different ways\\
+
+ i)  $E \rightarrow E + E \rightarrow E + E*E \rightarrow a + E*E \rightarrow a + a*E \rightarrow a + a*a$ \\
+ ii) $E \rightarrow E*E \rightarrow E + E*E \rightarrow a + E*E \rightarrow a + a*E \rightarrow a + a*a$ \\
+ 
+ So, for these two cases two parse trees are generated as shown in Fig. 6.11.\\
+ 
+ \begin{center}
+\section{picture}
+\includegraphics[width=8cm,height=5cm]{308-1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}
+
+\small{
+So, the grammar is ambiguous.\\
+In the place of 'a', put '2'. So, the derivations will be\\
+i) $E \rightarrow E + E \rightarrow E + E*E \rightarrow 2 + E*E \rightarrow 2 + 2*E \rightarrow 2 + 2*2$ \\
+ii) $E \rightarrow E*E \rightarrow E + E*E \rightarrow 2 + E*E \rightarrow 2 + 2*E \rightarrow 2 + 2*2$ \\
+Up to this step, both of them seem the same. But the real problem is in the parse tree as shown in Fig. 6.12.}\\
+
+\begin{center}
+\section{picture}
+\includegraphics[width=8cm,height=5cm]{308-2.png}
+\end{center}
+
+\small{
+\hspace*{0.5cm} The correct result is $2 + 2*2 = 2 + 4 = 6$ (according to the rules of mathematics $*$ has higher precedence
+over $+$).}\\
+\end{frame}
+\end{document} 
